@@ -16,10 +16,10 @@ Can you do it like a boss? Do it without using any builtin function like __built
 
 ```
 
-```
 ```i&(i-1) drops the lowest set bit. 
 For example: i = 14, its binary representation is 1110, so i-1 is 1101, i&(i-1) = 1100, 
 the number of "1" in its binary representation decrease one, so ret[i] = ret[i&(i-1)] + 1.
+```
 ```java
 public class Solution {
     public int[] countBits(int num) {
@@ -30,7 +30,7 @@ public class Solution {
     }
 }
 ```
-```
+
 
 ```java
 public class Solution {
@@ -50,7 +50,7 @@ public class Solution {
             ret[i] = ret[(i - (i & (-i)))] + 1;
         return ret;
 ```
-
+```
 For the the first solution : f[i] = f[i >> 1] + (i & 1) .
 This is more straight-forward. Right shit by 1 bit,
 compare to previously, the number of set bit would either reduce by 1(when number is odd) or
