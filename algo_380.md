@@ -60,3 +60,8 @@ This is more interesting, we first isolate the right-most set bit and then deduc
 from our number i(ex. by deduction : 11 0100 -> 11 0000).
 We can tell for sure, we definitely lose 1 set bit by the deduction so we just add 1 back.
 ```
+
+
+```
+i&(i-1)  get same result to i - (i & (-i)
+```
