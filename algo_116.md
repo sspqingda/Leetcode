@@ -53,6 +53,9 @@ After calling your function, the tree should look like:
       2 -> 3 -> NULL
      / \    \
     4-> 5 -> 7 -> NULL
+    
+    
+```
 ```java
 /**
  * Definition for binary tree with next pointer.
@@ -157,4 +160,24 @@ public class Solution {
         
     }
 }
+```
+
+```java
+
+public class Solution {
+    public void connect(TreeLinkNode root) {
+        while(root != null){
+            TreeLinkNode tempChild = new TreeLinkNode(0);
+            TreeLinkNode currentChild = tempChild;
+            while(root!=null){
+                if(root.left != null) { currentChild.next = root.left; currentChild = currentChild.next;}
+                if(root.right != null) { currentChild.next = root.right; currentChild = currentChild.next;}
+                root = root.next;
+            }
+            root = tempChild.next;
+            tempChild.next = null;
+        }
+    }
+}
+
 ```
